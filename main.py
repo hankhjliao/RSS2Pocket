@@ -8,11 +8,13 @@ import logging
 import os
 import requests
 import sys
+import time
 
 
 update_interval = timedelta(hours=1)
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+
 
 logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s", level=logging.INFO)
 now = datetime.now()
@@ -33,8 +35,8 @@ def add_article(consumer_key, access_token, url):
     return get_json['status']
 
 
-def time_parser(time_string):
-    return parser.parse(time_string).replace(tzinfo=None)
+def timestamp_to_datetime(time_string):
+    return datetime.fromtimestamp(time.mktime(time_string))
 
 
 with open('rss.txt') as f:
@@ -59,15 +61,15 @@ for rss_url in rss_urls:
     content = BytesIO(resp.content)
     Feed = feedparser.parse(content)
 
-    feed_updated_time =  Feed.get('feed', {}).get('updated', None)
+    feed_updated_time = Feed.get('feed', {}).get('updated', None)
+    feed_updated_time_parsed = Feed.get('feed', {}).get('updated_parsed', None)
     logging.info("Feed last updated time: %s", feed_updated_time)
 
-    if (feed_updated_time is None)\
-            or ((now - time_parser(feed_updated_time)) <= update_interval):
+    if (feed_updated_time is None) or ((now - timestamp_to_datetime(feed_updated_time_parsed)) <= update_interval):
         for entry in Feed.get('entries', []):
             entry_published_time =  entry.get('published', None)
-            if (entry_published_time is None)\
-                    or ((now - time_parser(entry_published_time)) <= update_interval):
+            entry_published_time_parsed = entry.get('published_parsed', None)
+            if (entry_published_time is None) or ((now - timestamp_to_datetime(entry_published_time_parsed)) <= update_interval):
                 logging.info("Article Info:\n"\
                              "\tTitle: %s\n"\
                              "\tPublished time: %s\n"\
