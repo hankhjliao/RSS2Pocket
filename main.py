@@ -46,8 +46,6 @@ if os.path.exists('rss_database.zip'):
 else:
     rss_database = pd.DataFrame(columns=["feed_url", "last_saved_item_title", "updated_time"])
 
-print(rss_database)
-
 for rss_url in rss_urls:
     rss_url = rss_url.replace("\n", "")
     if rss_url.startswith("#") or (rss_url == ""): continue
