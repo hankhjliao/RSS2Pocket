@@ -1,7 +1,12 @@
 name: run
+
 on:
+  push:
+    branches:
+      - master
   schedule:
     - cron: '0 * * * *'
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -16,12 +21,27 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
+      run: sudo apt install jq curl
+    - name: Install python dependencies
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Get previous rss_database.csv
+      env:
+          GITHUB_REPO: ${{ github.repository }}
+      run: curl -H "Accept: application/vnd.github.v3+json" \
+            $(curl  -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/$GITHUB_REPO/actions/artifacts\?page\=1\&per_page\=1 \
+            | jq -r .artifacts\[0\].archive_download_url) > rss_database.csv || echo "Previous rss_database.csv not found"
     - name: Run code
       env:
         CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
         python main.py
+    - name: Upload rss_database.csv
+      uses: actions/upload-artifact@v2
+      with:
+        name: rss_database
+        path: rss_database.csv
+

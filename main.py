@@ -6,11 +6,11 @@ import feedparser
 import json
 import logging
 import os
+import pandas as pd
 import requests
 import time
 
 
-update_interval = timedelta(hours=1, minutes=5)
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 
@@ -33,12 +33,18 @@ def add_article(consumer_key, access_token, url):
     return get_json['status']
 
 
-def timestamp_to_datetime(time_string):
-    return datetime.fromtimestamp(time.mktime(time_string))
+if os.path.exists('rss.txt'):
+    with open('rss.txt') as f:
+        rss_urls = f.readlines()
+else:
+    logging.error("rss.txt not exists.")
+    exit()
 
 
-with open('rss.txt') as f:
-    rss_urls = f.readlines()
+if os.path.exists('rss_database.csv'):
+    rss_database = pd.read_csv('rss_database.csv')
+else:
+    rss_database = pd.DataFrame(columns=["feed_url", "last_saved_item_title", "updated_time"])
 
 for rss_url in rss_urls:
     rss_url = rss_url.replace("\n", "")
@@ -62,26 +68,35 @@ for rss_url in rss_urls:
     content = BytesIO(resp.content)
     Feed = feedparser.parse(content)
 
-    feed_updated_time = Feed.get('feed', {}).get('updated', None)
-    feed_updated_time_parsed = Feed.get('feed', {}).get('updated_parsed', None)
-    logging.info("Feed last updated time: %s", feed_updated_time)
+    flag_first_run = False
+    if rss_url not in rss_database["feed_url"].values:
+        rss_database.loc[-1] = {"feed_url": rss_url, "last_saved_item_title": None, "updated_time": None}
+        rss_database.index = rss_database.index + 1
+        flag_first_run = True
+    idx = rss_database[rss_database["feed_url"] == rss_url].index.values[0]
+    last_title = rss_database[rss_database["feed_url"] == rss_url]["last_saved_item_title"].values[0]
 
-    if (feed_updated_time is None) or ((now - timestamp_to_datetime(feed_updated_time_parsed)) <= update_interval):
-        for entry in Feed.get('entries', []):
+    for entry in Feed.get('entries', []):
+        if entry.title != last_title:
             entry_published_time =  entry.get('published', None)
-            entry_published_time_parsed = entry.get('published_parsed', None)
-            if (entry_published_time is None) or ((now - timestamp_to_datetime(entry_published_time_parsed)) <= update_interval):
-                logging.info("Article Info:\n"\
-                             "\tTitle: %s\n"\
-                             "\tPublished time: %s\n"\
-                             "\tLink: %s", entry.title, entry_published_time, entry.link)
-
-                if add_article(CONSUMER_KEY, ACCESS_TOKEN, entry.link):
-                    logging.info("Article added")
-                else:
-                    logging.warning("Article not added: %s", entry.link)
-
+            logging.info("Article Info:\n"\
+                         "\tTitle: %s\n"\
+                         "\tPublished time: %s\n"\
+                         "\tLink: %s", entry.title, entry_published_time, entry.link)
+            if add_article(CONSUMER_KEY, ACCESS_TOKEN, entry.link):
+                if rss_database[rss_database["feed_url"] == rss_url]["updated_time"].values[0] != now:
+                    rss_database.loc[idx, "last_saved_item_title"] = entry.title
+                    rss_database.loc[idx, "updated_time"] = now
+                logging.info("Article added")
             else:
-                break
+                logging.warning("Article not added: %s", entry.link)
+
+            if flag_first_run: break
+
+        else:
+            break
     print()
+
+rss_database = rss_database.sort_values("feed_url").reset_index(drop=True)
+rss_database.to_csv('rss_database.csv', index=False)
 
