@@ -7,11 +7,13 @@ import json
 import logging
 import os
 import requests
+import sys
 
 
 update_interval = timedelta(hours=1)
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+
 logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s", level=logging.INFO)
 now = datetime.now()
 
@@ -45,8 +47,13 @@ for rss_url in rss_urls:
         resp = requests.get(rss_url, timeout=10.0)
     except requests.ReadTimeout:
         logging.warning("Timeout when reading feed: %s", rss_url)
+        continue
     except requests.ConnectionError:
         logging.warning("Cannot access feed: %s", rss_url)
+        continue
+    except Exception as e:
+        logging.error("Unexpected error: %s", str(e))
+        continue
     content = BytesIO(resp.content)
     Feed = feedparser.parse(content)
 

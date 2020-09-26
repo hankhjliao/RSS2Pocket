@@ -15,4 +15,6 @@ https://www.ithome.com.tw/rss
 https://feeds.appinn.com/appinns/
 http://feeds.feedburner.com/freegroup
 
+# Test for wrong url
 https://a.c
+apple
