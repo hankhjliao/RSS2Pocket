@@ -22,7 +22,9 @@ def add_article(consumer_key, access_token, url):
     pocket_url = 'https://getpocket.com/v3/add'
     keys = {'consumer_key': consumer_key,
             'access_token': access_token,
-            'url': url}
+            'url': url,
+            'tags': 'feed',
+           }
     get_json = requests.post(pocket_url, data = keys)
     get_json = json.loads(get_json.text)
     if get_json.get('status', None) is None:
