@@ -50,12 +50,15 @@ for rss_url in rss_urls:
         resp = requests.get(rss_url, timeout=10.0)
     except requests.ReadTimeout:
         logging.warning("Timeout when reading feed: %s", rss_url)
+        print()
         continue
     except requests.ConnectionError:
         logging.warning("Cannot access feed: %s", rss_url)
+        print()
         continue
     except Exception as e:
         logging.error("Unexpected error: %s", str(e))
+        print()
         continue
     content = BytesIO(resp.content)
     Feed = feedparser.parse(content)
