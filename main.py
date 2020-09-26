@@ -9,6 +9,7 @@ import os
 import pandas as pd
 import requests
 import time
+import zipfile
 
 
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
@@ -100,3 +101,5 @@ for rss_url in rss_urls:
 rss_database = rss_database.sort_values("feed_url").reset_index(drop=True)
 rss_database.to_csv('rss_database.csv', index=False)
 
+with zipfile.ZipFile('rss_database.zip', 'w') as zf:
+    zf.write('rss_database.csv')
