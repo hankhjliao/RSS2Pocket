@@ -41,8 +41,8 @@ else:
     exit()
 
 
-if os.path.exists('rss_database.csv'):
-    rss_database = pd.read_csv('rss_database.csv')
+if os.path.exists('rss_database.zip'):
+    rss_database = pd.read_csv('rss_database.zip')
 else:
     rss_database = pd.DataFrame(columns=["feed_url", "last_saved_item_title", "updated_time"])
 
