@@ -28,11 +28,12 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Get previous rss_database.csv
       env:
-          GITHUB_REPO: ${{ github.repository }}
-      run: curl -H "Accept: application/vnd.github.v3+json" \
-            $(curl  -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/$GITHUB_REPO/actions/artifacts\?page\=1\&per_page\=1 \
-            | jq -r .artifacts\[0\].archive_download_url) > rss_database.csv || echo "Previous rss_database.csv not found"
+        GITHUB_REPO: ${{ github.repository }}
+      run: |
+        curl -H "Accept: application/vnd.github.v3+json" \
+          $(curl  -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/$GITHUB_REPO/actions/artifacts\?page\=1\&per_page\=1 \
+          | jq -r .artifacts\[0\].archive_download_url) -o rss_database.csv || echo "Previous rss_database.csv not found"
     - name: Run code
       env:
         CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
