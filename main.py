@@ -11,10 +11,9 @@ import sys
 import time
 
 
-update_interval = timedelta(hours=1)
+update_interval = timedelta(hours=1, minutes=5)
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
-
 
 logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s", level=logging.INFO)
 now = datetime.now()
