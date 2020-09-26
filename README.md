@@ -16,13 +16,13 @@ An awesome tool to save articles from RSS feed to Pocket automatically.
 <img src="https://img.shields.io/github/stars/hankliao87/RSS2Pocket.svg?style=flat-square" alt=""></a>
 <a href="https://github.com/hankliao87/RSS2Pocket/issues">
 <img src="https://img.shields.io/github/issues/hankliao87/RSS2Pocket.svg?style=flat-square" alt=""></a>
-<a href="https://github.com/hankliao87/RSS2Pocket/blob/master/LICENSE">
+<a href="https://github.com/hankliao87/RSS2Pocket/blob/master/LICENSE.txt">
 <img src="https://img.shields.io/github/license/hankliao87/RSS2Pocket.svg?style=flat-square" alt=""></a>
 </p>
 
 </p>
 
-## About The Project
+## About the Project
 I used to use IFTTT to [save articles from RSS feed to Pocket](https://ifttt.com/applets/gnf8UbSV).  
 But in Sept. 2020, [IFTTT starts the Pro plan which makes the Standard plan can only create 3 applets](https://ifttt.com/plans).  
 Therefore, I try to use GitHub Action to do the jobs.
@@ -76,4 +76,5 @@ Project Link: [https://github.com/hankliao87/RSS2Pocket](https://github.com/hank
 ## Acknowledgements
 - [GETTING STARTED WITH THE POCKET DEVELOPER API](https://www.jamesfmackenzie.com/getting-started-with-the-pocket-developer-api/)
 - [Pocket API: Documentation Overview](https://getpocket.com/developer/docs/overview)
+- [Best README Template](https://github.com/othneildrew/Best-README-Template)
 
