@@ -1,0 +1,18 @@
+# Blog
+http://feeds.feedburner.com/playpc
+http://feeds.feedburner.com/ruanyifeng
+https://sspai.com/feed
+
+# Game
+# https://gamejilu.com/rss/
+https://www.4gamers.com.tw/rss/latest-news
+
+# News
+https://rsshub.app/github/issue/headllines/hackernews-daily
+https://www.ithome.com.tw/rss
+
+# Software
+https://feeds.appinn.com/appinns/
+http://feeds.feedburner.com/freegroup
+
+https://a.c
