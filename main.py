@@ -47,7 +47,9 @@ if os.path.exists('rss_database.zip'):
 else:
     rss_database = pd.DataFrame(columns=["feed_url", "last_saved_item_title", "updated_time"])
 
+
 for rss_url in rss_urls:
+
     rss_url = rss_url.replace("\n", "")
     if rss_url.startswith("#") or (rss_url == ""): continue
 
@@ -71,16 +73,19 @@ for rss_url in rss_urls:
         rss_database.loc[-1] = {"feed_url": rss_url, "last_saved_item_title": None, "updated_time": None}
         rss_database.index = rss_database.index + 1
         flag_first_run = True
+
     idx = rss_database[rss_database["feed_url"] == rss_url].index.values[0]
     last_title = rss_database[rss_database["feed_url"] == rss_url]["last_saved_item_title"].values[0]
 
     for entry in Feed.get('entries', []):
         if entry.title != last_title:
+
             entry_published_time =  entry.get('published', None)
             logging.info("Article Info:\n"\
                          "\tTitle: %s\n"\
                          "\tPublished time: %s\n"\
                          "\tLink: %s", entry.title, entry_published_time, entry.link)
+
             if add_article(CONSUMER_KEY, ACCESS_TOKEN, entry.link):
                 if rss_database[rss_database["feed_url"] == rss_url]["updated_time"].values[0] != now:
                     rss_database.loc[idx, "last_saved_item_title"] = entry.title
