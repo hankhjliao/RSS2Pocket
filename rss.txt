@@ -1,6 +1,9 @@
 # Blog
 http://feeds.feedburner.com/playpc
 http://feeds.feedburner.com/ruanyifeng
+https://rsshub.app/galaxylab
+https://rsshub.app/iyouport/article
+https://rsshub.app/leemeng
 https://sspai.com/feed
 
 # Game
@@ -12,9 +15,11 @@ https://rsshub.app/github/issue/headllines/hackernews-daily
 https://www.ithome.com.tw/rss
 
 # Software
-https://feeds.appinn.com/appinns/
 http://feeds.feedburner.com/freegroup
+https://feeds.appinn.com/appinns/
+https://xinquji.com/rss
 
 # Test for wrong url
+https://example.com
 https://a.c
 apple
