@@ -45,7 +45,7 @@ else:
 if os.path.exists('rss_database.zip'):
     rss_database = pd.read_csv('rss_database.zip')
 else:
-    rss_database = pd.DataFrame(columns=["feed_url", "last_saved_item_title", "updated_time"])
+    rss_database = pd.DataFrame(columns=["feed_url", "last_saved_item_link", "updated_time"])
 
 
 for rss_url in rss_urls:
@@ -70,15 +70,15 @@ for rss_url in rss_urls:
 
     flag_first_run = False
     if rss_url not in rss_database["feed_url"].values:
-        rss_database.loc[-1] = {"feed_url": rss_url, "last_saved_item_title": None, "updated_time": None}
+        rss_database.loc[-1] = {"feed_url": rss_url, "last_saved_item_link": None, "updated_time": None}
         rss_database.index = rss_database.index + 1
         flag_first_run = True
 
     idx = rss_database[rss_database["feed_url"] == rss_url].index.values[0]
-    last_title = rss_database[rss_database["feed_url"] == rss_url]["last_saved_item_title"].values[0]
+    last_link = rss_database[rss_database["feed_url"] == rss_url]["last_saved_item_link"].values[0]
 
     for entry in Feed.get('entries', []):
-        if entry.title != last_title:
+        if entry.link != last_link:
 
             entry_published_time =  entry.get('published', None)
             logging.info("Article Info:\n"\
@@ -88,7 +88,7 @@ for rss_url in rss_urls:
 
             if add_article(CONSUMER_KEY, ACCESS_TOKEN, entry.link):
                 if rss_database[rss_database["feed_url"] == rss_url]["updated_time"].values[0] != now:
-                    rss_database.loc[idx, "last_saved_item_title"] = entry.title
+                    rss_database.loc[idx, "last_saved_item_link"] = entry.link
                     rss_database.loc[idx, "updated_time"] = now
                 logging.info("Article added")
             else:
