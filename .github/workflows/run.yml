@@ -27,14 +27,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        #    - name: Get previous rss_database.csv
-        #      env:
-        #        GITHUB_REPO: ${{ github.repository }}
-        #      run: |
-        #        curl -L -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-        #          $(curl  -H "Accept: application/vnd.github.v3+json" \
-        #          https://api.github.com/repos/$GITHUB_REPO/actions/artifacts\?page\=1\&per_page\=1 \
-        #          | jq -r .artifacts\[0\].archive_download_url) -o rss_database.zip || echo "Previous rss_database.csv not found"
+    - name: Get previous rss_database.csv
+      env:
+        GITHUB_REPO: ${{ github.repository }}
+      run: |
+        curl -L -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          $(curl  -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/$GITHUB_REPO/actions/artifacts\?page\=1\&per_page\=1 \
+          | jq -r .artifacts\[0\].archive_download_url) -o rss_database.zip || echo "Previous rss_database.csv not found"
     - name: Run code
       env:
         CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
