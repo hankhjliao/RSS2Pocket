@@ -17,7 +17,6 @@ https://www.ithome.com.tw/rss
 # Software
 http://feeds.feedburner.com/freegroup
 https://feeds.appinn.com/appinns/
-https://xinquji.com/rss
 
 # Test for wrong url
 https://example.com
