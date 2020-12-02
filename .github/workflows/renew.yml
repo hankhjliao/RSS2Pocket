@@ -18,6 +18,7 @@ jobs:
       run: |
         echo $(date '+%Y-%m-%d %H:%M:%S') > last_renew_time.txt
         cat last_renew_time.txt
+        ls
 
         #  - name: push changes to remote
         #    run: |
