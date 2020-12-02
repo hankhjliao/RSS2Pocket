@@ -19,7 +19,7 @@ http://feeds.feedburner.com/freegroup
 https://feeds.appinn.com/appinns/
 
 # Twitter
-https://rsshub.app/twitter/user/quiztime
+# https://rsshub.app/twitter/user/quiztime
 
 # Test for wrong url
 https://example.com
