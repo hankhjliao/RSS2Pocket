@@ -1,8 +1,11 @@
 name: renew
 
 on:
+  push:
+    branches:
+      - master
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   test:
@@ -12,13 +15,16 @@ jobs:
     - name: Checkout codes
       uses: actions/checkout@v2
     - name: Renew
-      run: echo $(date '+%Y-%m-%d %H:%M:%S') > last_renew_time.txt
-    - name: push changes to remote
       run: |
-        git config --global user.name "renew@example.com"
-        git config --global user.email "renew"
+        echo $(date '+%Y-%m-%d %H:%M:%S') > last_renew_time.txt
+        cat last_renew_time.txt
 
-        git add last_renew_time.txt
-        git commit -m "Renew"
-        git push
+        #  - name: push changes to remote
+        #    run: |
+        #      git config --global user.name "renew@example.com"
+        #      git config --global user.email "renew"
+
+        #      git add last_renew_time.txt
+        #      git commit -m "Renew"
+        #      git push
 
