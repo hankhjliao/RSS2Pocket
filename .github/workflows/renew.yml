@@ -1,9 +1,6 @@
 name: renew
 
 on:
-  push:
-    branches:
-      - master
   schedule:
     - cron: '0 * * * *'
 
@@ -17,15 +14,12 @@ jobs:
     - name: Renew
       run: |
         echo $(date '+%Y-%m-%d %H:%M:%S') > last_renew_time.txt
-        cat last_renew_time.txt
-        ls
+    - name: push changes to remote
+      run: |
+        git config --global user.name "renew@example.com"
+        git config --global user.email "renew"
 
-        #  - name: push changes to remote
-        #    run: |
-        #      git config --global user.name "renew@example.com"
-        #      git config --global user.email "renew"
-
-        #      git add last_renew_time.txt
-        #      git commit -m "Renew"
-        #      git push
+        git add last_renew_time.txt
+        git commit -m "Renew"
+        git push
 
