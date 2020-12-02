@@ -2,7 +2,7 @@ name: renew
 
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '*/10 * * * *'
 
 jobs:
   test:
