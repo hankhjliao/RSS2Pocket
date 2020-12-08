@@ -56,7 +56,7 @@ to get `consumer_key` and `access_token`.
 
 ### CLI
 1. Edit rss.txt
-2. `$ CONSUMER_KEY='consumer_key' ACCESS_TOKEN='access_token' python main.py`
+2. `$ CONSUMER_KEY='consumer_key' ACCESS_TOKEN='access_token' python3 main.py`
 
 
 ## Known Issues
