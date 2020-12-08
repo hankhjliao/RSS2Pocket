@@ -46,7 +46,13 @@ to get `consumer_key` and `access_token`.
 ### GitHub Action
 1. Fork this project
 2. Edit rss.txt
-3. Fill `consumer_key` and `access_token` in the Secrets tab in Settings.
+3. Fill `consumer_key` and `access_token` in the Secrets tab in Settings of the repository.
+
+<figure>
+
+[![GitHub Action Step 3](img/GitHub_Action_Step3.png)](img/GitHub_Action_Step3.png)
+
+</figure>
 
 ### CLI
 1. Edit rss.txt
