@@ -28,7 +28,7 @@ But in Sept. 2020, [IFTTT starts the Pro plan which makes the Standard plan can 
 Therefore, I try to use GitHub Action to do the jobs.
 
 This project will execute the python script every hour,  
-and it will save articles which were posted from RSS feed to Pocket.
+and it will save articles from RSS feed to Pocket.
 
 ## Getting Started
 
