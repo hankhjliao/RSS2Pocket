@@ -32,7 +32,7 @@ and it will save articles which were posted from RSS feed to Pocket.
 
 ## Getting Started
 
-### Install Dependencies
+### Install Dependencies (CLI only)
 1. `$ python3 -m pip install --upgrade pip`
 2. `$ pip3 install -r requirements.txt`
 
