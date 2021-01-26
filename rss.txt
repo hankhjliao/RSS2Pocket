@@ -13,6 +13,7 @@ https://www.4gamers.com.tw/rss/latest-news
 # News
 https://rsshub.app/github/issue/headllines/hackernews-daily
 https://www.ithome.com.tw/rss
+https://openingsource.org/feed/
 
 # Software
 http://feeds.feedburner.com/freegroup
