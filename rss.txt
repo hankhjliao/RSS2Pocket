@@ -1,10 +1,12 @@
 # Blog
-http://feeds.feedburner.com/playpc
-http://feeds.feedburner.com/ruanyifeng
+https://feeds.feedburner.com/playpc
+https://feeds.feedburner.com/ruanyifeng
 https://rsshub.app/galaxylab
 https://rsshub.app/iyouport/article
 https://rsshub.app/leemeng
-https://sspai.com/feed
+https://feeds.feedburner.com/blogspot/gJZg
+https://rsshub.app/deepmind/blog
+https://rsshub.app/openai/blog
 
 # Game
 https://gamejilu.com/rss/
@@ -13,12 +15,12 @@ https://www.4gamers.com.tw/rss/latest-news
 # News
 https://rsshub.app/github/issue/headllines/hackernews-daily
 https://www.ithome.com.tw/rss
-https://openingsource.org/feed/
-https://feeds.feedburner.com/blogspot/gJZg
 
 # Software
-http://feeds.feedburner.com/freegroup
+https://feeds.feedburner.com/freegroup
 https://feeds.appinn.com/appinns/
+https://openingsource.org/feed/
+https://sspai.com/feed
 
 # Twitter
 # https://rsshub.app/twitter/user/quiztime
