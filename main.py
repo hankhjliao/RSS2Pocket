@@ -104,5 +104,7 @@ for rss_url in rss_urls:
 
 rss_database.sort_values("feed_url").to_csv('rss_database.csv', index=False)
 
+# This is for CLI user
+# As for GitHub Action user,the GitHub Action will compress the csv to zip file when running upload-artifact@v2
 with zipfile.ZipFile('rss_database.zip', 'w') as zf:
     zf.write('rss_database.csv')
