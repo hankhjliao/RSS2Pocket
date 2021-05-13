@@ -102,4 +102,7 @@ for rss_url in rss_urls:
         else:
             break
 
-rss_database.sort_values("feed_url").to_csv('rss_database.zip', index=False, compression="zip")
+rss_database.sort_values("feed_url").to_csv('rss_database.csv', index=False)
+
+with zipfile.ZipFile('rss_database.zip', 'w') as zf:
+    zf.write('rss_database.csv')
