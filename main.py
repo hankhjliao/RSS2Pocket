@@ -19,19 +19,20 @@ logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s", level=logg
 now = datetime.now()
 
 
-def add_article(consumer_key, access_token, url):
+def add_article(consumer_key, access_token, url, tags=['feed']):
     pocket_url = 'https://getpocket.com/v3/add'
-    keys = {'consumer_key': consumer_key,
-            'access_token': access_token,
-            'url': url,
-            'tags': 'feed',
-           }
-    get_json = requests.post(pocket_url, data = keys)
-    get_json = json.loads(get_json.text)
-    if get_json.get('status', None) is None:
-        logging.error("%s: %s", get_json['error'], get_json['message'])
+    data = {
+        'consumer_key': consumer_key,
+        'access_token': access_token,
+        'url': url,
+        'tags': ','.join(tags),
+    }
+    ret = requests.post(pocket_url, data=data)
+    ret = json.loads(ret.text)
+    if ret.get('status', None) is None:
+        logging.error("%s: %s", ret['error'], ret['message'])
         exit()
-    return get_json['status']
+    return ret['status']
 
 
 if os.path.exists('rss.txt'):
