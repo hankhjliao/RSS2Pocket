@@ -1,12 +1,9 @@
 # Blog
 https://feeds.feedburner.com/playpc
 https://feeds.feedburner.com/ruanyifeng
-https://rsshub.app/galaxylab
 https://rsshub.app/iyouport/article
 https://rsshub.app/leemeng
 https://feeds.feedburner.com/blogspot/gJZg
-https://rsshub.app/deepmind/blog
-https://rsshub.app/openai/blog
 https://distill.pub/rss.xml
 
 # Game
