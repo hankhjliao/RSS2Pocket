@@ -1,11 +1,14 @@
 from datetime import datetime
 from io import BytesIO
-import feedparser
+
 import json
 import logging
 import os
+
+import feedparser
 import pandas as pd
 import requests
+import yaml
 import zipfile
 
 CONSUMER_KEY = os.environ.get('CONSUMER_KEY', None)
@@ -44,11 +47,15 @@ def get_last_time_rss_data(rss_url):
     return idx, link_latest, link_second_latest
 
 
-if os.path.exists('rss.txt'):
-    with open('rss.txt') as f:
-        rss_urls = f.readlines()
+if os.path.exists('rss.yaml'):
+    with open("rss.yaml", 'r') as stream:
+        try:
+            rss_configs = yaml.safe_load(stream)
+        except Exception as e:
+            logging.error(f"Unexpected error when parsing yaml: {str(e)}")
+            exit()
 else:
-    logging.error("rss.txt not exists.")
+    logging.error("rss.yaml not exists.")
     exit()
 
 if os.path.exists('rss_database.zip'):
@@ -60,13 +67,13 @@ else:
                                          "updated_time"])
 
 
-# Iter all the feed url
-for rss_url in rss_urls:
+# Iter all the feed configs
+for rss_config in rss_configs:
 
-    # Trim the feed url
-    rss_url = rss_url.replace("\n", "")
-    if rss_url.startswith("#") or (rss_url == ""):
-        continue
+    # Get the feed config
+    rss_url = rss_config['url']
+    rss_tags = rss_config.get('tags', ['feed'])
+    rss_filter = rss_config.get('filter', '')
 
     # Get the feed content
     logging.info(f"Checking {rss_url}")
@@ -123,7 +130,7 @@ for rss_url in rss_urls:
                      f"\tLink: {entry.link}")
 
         # Add the article
-        if add_article(entry.link):
+        if add_article(entry.link, rss_tags):
             logging.info("Article added")
 
             # Update the rss database
