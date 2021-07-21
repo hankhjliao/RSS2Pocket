@@ -98,8 +98,17 @@ for rss_url in rss_urls:
     # Get last time rss data
     idx, link_latest, link_second_latest = get_last_time_rss_data(rss_url)
 
+    # Sort the article according to the published time
+    try:
+        entries = Feed.get('entries', [])
+        entries = sorted(entries, key=lambda e: e.published_parsed,
+                         reverse=True)
+    except Exception as e:
+        entries = Feed.get('entries', [])
+        logging.error(f"Feed doesn't support published_parsed attribute: {rss_url}")
+
     # Iter the article in the feed
-    for entry in Feed.get('entries', []):
+    for entry in entries:
 
         # Break if added
         if (entry.link == link_latest) or (entry.link == link_second_latest):
