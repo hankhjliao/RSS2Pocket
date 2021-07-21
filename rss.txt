@@ -5,6 +5,7 @@ https://rsshub.app/iyouport/article
 https://rsshub.app/leemeng
 https://feeds.feedburner.com/blogspot/gJZg
 https://distill.pub/rss.xml
+https://www.densediscovery.com/feed/
 
 # Game
 https://gamejilu.com/rss/
