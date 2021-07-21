@@ -14,6 +14,7 @@ https://www.4gamers.com.tw/rss/latest-news
 https://rsshub.app/github/issue/headllines/hackernews-daily
 https://www.ithome.com.tw/rss
 https://global.udn.com/rss/news/1020/8662
+https://kill-the-newsletter.com/feeds/8l0fpgvxavoua8af.xml
 
 # Software
 https://feeds.feedburner.com/freegroup
