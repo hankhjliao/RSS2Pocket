@@ -11,6 +11,7 @@ import zipfile
 CONSUMER_KEY = os.environ.get('CONSUMER_KEY', None)
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', None)
 NOW = datetime.now()
+REQUEST_TIMEOUT = 10.0
 
 logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s",
                     level=logging.INFO)
@@ -70,7 +71,7 @@ for rss_url in rss_urls:
     # Get the feed content
     logging.info(f"Checking {rss_url}")
     try:
-        resp = requests.get(rss_url, timeout=10.0)
+        resp = requests.get(rss_url, timeout=REQUEST_TIMEOUT)
     except requests.ReadTimeout:
         logging.warning(f"Timeout when reading feed: {rss_url}")
         continue
