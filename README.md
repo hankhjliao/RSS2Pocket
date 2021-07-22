@@ -45,7 +45,7 @@ to get `consumer_key` and `access_token`.
 
 ### GitHub Action
 1. Fork this project
-2. Edit rss.txt
+2. Edit rss.yaml
 3. Fill `consumer_key` and `access_token` in the Secrets tab in Settings of the repository.
 
 <figure>
@@ -55,7 +55,7 @@ to get `consumer_key` and `access_token`.
 </figure>
 
 ### CLI
-1. Edit rss.txt
+1. Edit rss.yaml
 2. `$ CONSUMER_KEY='consumer_key' ACCESS_TOKEN='access_token' python3 main.py`
 
 
