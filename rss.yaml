@@ -26,6 +26,8 @@
   name: Google AI Blog
 - url: https://distill.pub/rss.xml
   name: Distill
+- url: https://kexue.fm/feed
+  name: 科学空间
 - url: https://rsshub.app/leemeng
 - url: https://rsshub.app/iyouport/article
 
