@@ -28,6 +28,8 @@
   name: Distill
 - url: https://kexue.fm/feed
   name: 科学空间
+- url: https://lilianweng.github.io/lil-log/feed.xml
+  name: Lil’Log
 - url: https://rsshub.app/leemeng
 - url: https://rsshub.app/iyouport/article
 
