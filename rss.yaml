@@ -32,6 +32,8 @@
   name: Lil’Log
 - url: https://rsshub.app/leemeng
 - url: https://rsshub.app/iyouport/article
+- url: https://stackoverflow.blog/feed/
+  name: Stack Overflow Blog
 
 # Game
 - url: https://gamejilu.com/rss/
