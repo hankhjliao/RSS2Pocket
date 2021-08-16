@@ -50,6 +50,8 @@
   name: udn 轉角國際
 - url: https://kill-the-newsletter.com/feeds/8l0fpgvxavoua8af.xml
   name: 中央社日報
+- url: https://www.twreporter.org/a/rss2.xml
+  name: 報導者 The Reporter
 
 # Software
 - url: https://feeds.feedburner.com/freegroup
