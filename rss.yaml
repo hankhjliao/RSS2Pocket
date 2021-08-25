@@ -42,7 +42,7 @@
   name: 4gamers
 
 # News
-- url: https://rsshub.app/github/issue/headllines/hackernews-daily
+- url: https://rss.shab.fun/github/issue/headllines/hackernews-daily
   name: Hacker News
 - url: https://www.ithome.com.tw/rss
   name: iThome 新聞
@@ -64,7 +64,7 @@
   name: 少数派
 
 # Story
-- url: https://github.com/hellodword/wechat-feeds/raw/feeds/MzIzOTE5Nzg4MA==.xml
+- url: https://rss.shab.fun/wechat/wemp/f395c385-752e-414b-82c8-7536c31ad0fe
   name: 魔宙
 
 # Twitter
