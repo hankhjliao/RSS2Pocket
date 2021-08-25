@@ -63,5 +63,9 @@
 - url: https://sspai.com/feed
   name: 少数派
 
+# Story
+- url: https://github.com/hellodword/wechat-feeds/raw/feeds/MzIzOTE5Nzg4MA==.xml
+  name: 魔宙
+
 # Twitter
 # - url: https://rsshub.app/twitter/user/quiztime
