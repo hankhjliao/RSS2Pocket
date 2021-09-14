@@ -13,9 +13,9 @@
 #   filter: "Test"
 
 # Test for wrong url
-- url: https://example.com
-- url: https://a.c
-- url: apple
+# - url: https://example.com
+# - url: https://a.c
+# - url: apple
 
 # Blog
 - url: https://feeds.feedburner.com/playpc
@@ -46,12 +46,12 @@
   name: Hacker News
 - url: https://www.ithome.com.tw/rss
   name: iThome 新聞
-- url: https://global.udn.com/rss/news/1020/8662
-  name: udn 轉角國際
+# - url: https://global.udn.com/rss/news/1020/8662
+#   name: udn 轉角國際
 - url: https://kill-the-newsletter.com/feeds/8l0fpgvxavoua8af.xml
   name: 中央社日報
-- url: https://www.twreporter.org/a/rss2.xml
-  name: 報導者 The Reporter
+# - url: https://www.twreporter.org/a/rss2.xml
+#   name: 報導者 The Reporter
 
 # Software
 - url: https://feeds.feedburner.com/freegroup
