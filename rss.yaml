@@ -30,6 +30,8 @@
   name: 科学空间
 - url: https://lilianweng.github.io/lil-log/feed.xml
   name: Lil’Log
+- url: https://rss.shab.fun/blogs/wordpress/haogroot.com/
+  name: haogroot’s Blog
 - url: https://rsshub.app/leemeng
 - url: https://iyouport.substack.com/feed
 # - url: https://stackoverflow.blog/feed/
