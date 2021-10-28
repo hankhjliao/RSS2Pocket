@@ -16,8 +16,8 @@ jobs:
         echo $(date '+%Y-%m-%d %H:%M:%S') > last_renew_time.txt
     - name: push changes to remote
       run: |
-        git config --global user.name "renew@example.com"
-        git config --global user.email "renew"
+        git config --global user.name "renew"
+        git config --global user.email "renew@example.com"
 
         git add last_renew_time.txt
         git commit -m "Renew"
