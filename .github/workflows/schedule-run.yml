@@ -1,9 +1,6 @@
 name: run
 
 on:
-  push:
-    branches:
-      - master
   schedule:
     - cron: '0 * * * *'
 
