@@ -42,7 +42,7 @@ jobs:
           $(curl  -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/repos/$GITHUB_REPO/actions/artifacts\?page\=1\&per_page\=1 \
           | jq -r .artifacts\[0\].archive_download_url) -o rss_database.zip || \
-          echo "Previous rss_database.csv not found" && exit 1
+          (echo "Previous rss_database.csv not found" && exit 1)
     - name: Run code
       env:
         CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
