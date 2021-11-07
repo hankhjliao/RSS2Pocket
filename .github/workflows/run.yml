@@ -43,7 +43,7 @@ jobs:
               $(curl  -H "Accept: application/vnd.github.v3+json" \
               https://api.github.com/repos/$GITHUB_REPO/actions/artifacts\?page\=1\&per_page\=1 \
               | jq -r .artifacts\[0\].archive_download_url) -o rss_database.zip; \
-          done
+        done
     - name: Run code
       env:
         CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
