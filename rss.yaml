@@ -38,6 +38,8 @@
 - url: https://iyouport.substack.com/feed
 # - url: https://stackoverflow.blog/feed/
 #   name: Stack Overflow Blog
+- url: https://kill-the-newsletter.com/feeds/yzvb49b43esijjhr.xml
+  name: www.workspaces.xyz
 
 # Game
 - url: https://gamejilu.com/rss/
