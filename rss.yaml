@@ -60,8 +60,8 @@
 #   name: 報導者 The Reporter
 
 # Software
-# - url: https://feeds.feedburner.com/freegroup
-#   name: 免費資源網路社群
+- url: https://feeds.feedburner.com/freegroup
+  name: 免費資源網路社群
 - url: https://feeds.appinn.com/appinns/
   name: 小众软件
 - url: https://openingsource.org/feed/
