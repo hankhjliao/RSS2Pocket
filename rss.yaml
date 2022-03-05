@@ -20,60 +20,73 @@
 # Blog
 - url: https://feeds.feedburner.com/playpc
   name: 電腦玩物
+  tags: [blog]
 - url: https://feeds.feedburner.com/ruanyifeng
   name: 阮一峰的网络日志
+  tags: [blog]
 - url: https://feeds.feedburner.com/blogspot/gJZg
   name: Google AI Blog
+  tags: [blog]
 - url: https://distill.pub/rss.xml
   name: Distill
-- url: https://kexue.fm/feed
-  name: 科学空间
+  tags: [blog]
+# - url: https://kexue.fm/feed
+#   name: 科学空间
 - url: https://lilianweng.github.io/lil-log/feed.xml
   name: Lil’Log
+  tags: [blog]
 - url: https://rss.shab.fun/blogs/wordpress/haogroot.com/
   name: haogroot’s Blog
+  tags: [blog]
 - url: https://cjting.me/index.xml
   name: CJ Ting’s Blog
+  tags: [blog]
 - url: https://rsshub.app/leemeng
-- url: https://iyouport.substack.com/feed
-# - url: https://stackoverflow.blog/feed/
-#   name: Stack Overflow Blog
+  tags: [blog]
 - url: https://kill-the-newsletter.com/feeds/yzvb49b43esijjhr.xml
   name: www.workspaces.xyz
+- url: https://sspai.com/feed
+  name: 少数派
+  tags: [blog]
 
 # Game
 - url: https://gamejilu.com/rss/
   name: Gamejilu 遊戲筆記
+  tags: [game]
 - url: https://www.4gamers.com.tw/rss/latest-news
   name: 4gamers
+  tags: [game]
 
 # News
 - url: https://rss.shab.fun/github/issue/headllines/hackernews-daily
   name: Hacker News
+  tags: [news]
 - url: https://www.ithome.com.tw/rss
   name: iThome 新聞
-# - url: https://global.udn.com/rss/news/1020/8662
-#   name: udn 轉角國際
+  tags: [news]
+- url: https://global.udn.com/rss/news/1020/8662
+  name: udn 轉角國際
+  tags: [news]
 - url: https://kill-the-newsletter.com/feeds/8l0fpgvxavoua8af.xml
   name: 中央社日報
-# - url: https://www.twreporter.org/a/rss2.xml
-#   name: 報導者 The Reporter
+  tags: [news]
+- url: https://www.twreporter.org/a/rss2.xml
+  name: 報導者 The Reporter
+  tags: [news]
 
 # Software
 - url: https://feeds.feedburner.com/freegroup
   name: 免費資源網路社群
+  tags: [software]
 - url: https://feeds.appinn.com/appinns/
   name: 小众软件
-- url: https://openingsource.org/feed/
-  name: 开源工场
-- url: https://sspai.com/feed
-  name: 少数派
+  tags: [software]
+# - url: https://openingsource.org/feed/
+#   name: 开源工场
 - url: https://kill-the-newsletter.com/feeds/bogl2fboluknjp7z.xml
   name: Probably Nothing
+  tags: [software]
 
 # Story
-- url: https://rss.shab.fun/wechat/wemp/f395c385-752e-414b-82c8-7536c31ad0fe
-  name: 魔宙
-
-# Twitter
-# - url: https://rsshub.app/twitter/user/quiztime
+# - url: https://rss.shab.fun/wechat/wemp/f395c385-752e-414b-82c8-7536c31ad0fe
+#   name: 魔宙
