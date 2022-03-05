@@ -20,10 +20,11 @@ logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s",
                     level=logging.INFO)
 
 
-def add_article(url, tags=['feed']):
+def add_article(url, tags=[]):
     global CONSUMER_KEY
     global ACCESS_TOKEN
     pocket_url = 'https://getpocket.com/v3/add'
+    tags.append('feed')
     data = {
         'consumer_key': CONSUMER_KEY,
         'access_token': ACCESS_TOKEN,
