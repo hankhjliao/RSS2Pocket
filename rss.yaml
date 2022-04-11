@@ -73,6 +73,9 @@
 - url: https://www.twreporter.org/a/rss2.xml
   name: 報導者 The Reporter
   tags: [news]
+- url: https://www.phoronix.com/rss.php
+  name: Phoronix
+  tags: [news]
 
 # Software
 - url: https://feeds.feedburner.com/freegroup
