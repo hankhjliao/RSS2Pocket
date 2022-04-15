@@ -76,6 +76,9 @@
 - url: https://www.phoronix.com/rss.php
   name: Phoronix
   tags: [news]
+- url: https://forum.manjaro.org/c/announcements/testing-updates.rss
+  name: Manjaro Testing Updates
+  tags: [news]
 
 # Software
 - url: https://feeds.feedburner.com/freegroup
