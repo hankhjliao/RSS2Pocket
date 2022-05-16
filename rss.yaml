@@ -43,8 +43,8 @@
   tags: [blog]
 - url: https://rsshub.app/leemeng
   tags: [blog]
-- url: https://kill-the-newsletter.com/feeds/yzvb49b43esijjhr.xml
-  name: www.workspaces.xyz
+# - url: https://kill-the-newsletter.com/feeds/yzvb49b43esijjhr.xml
+#   name: www.workspaces.xyz
 - url: https://sspai.com/feed
   name: 少数派
   tags: [blog]
