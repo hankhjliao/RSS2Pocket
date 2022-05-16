@@ -89,9 +89,9 @@
   tags: [software]
 # - url: https://openingsource.org/feed/
 #   name: 开源工场
-- url: https://kill-the-newsletter.com/feeds/bogl2fboluknjp7z.xml
-  name: Probably Nothing
-  tags: [software]
+# - url: https://kill-the-newsletter.com/feeds/bogl2fboluknjp7z.xml
+#   name: Probably Nothing
+#   tags: [software]
 
 # Story
 - url: https://api.feeddd.org/feeds/613381f91269c358aa0eada9
