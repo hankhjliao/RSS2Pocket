@@ -32,7 +32,7 @@
   tags: [blog]
 # - url: https://kexue.fm/feed
 #   name: 科学空间
-- url: https://lilianweng.github.io/lil-log/feed.xml
+- url: https://lilianweng.github.io/index.xml
   name: Lil’Log
   tags: [blog]
 - url: https://rss.shab.fun/blogs/wordpress/haogroot.com/
