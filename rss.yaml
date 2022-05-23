@@ -79,6 +79,9 @@
 - url: https://forum.manjaro.org/c/announcements/testing-updates.rss
   name: Manjaro Testing Updates
   tags: [news]
+- url: https://feeds.feedburner.com/zhihu-daily
+  name: 知乎日报
+  tags: [news]
 
 # Software
 - url: https://feeds.feedburner.com/freegroup
