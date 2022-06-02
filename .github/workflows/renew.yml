@@ -1,16 +1,16 @@
-name: renew
+name: Renew CI
 
 on:
   schedule:
     - cron: '0 0 1 * *'
 
 jobs:
-  test:
+  renew:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout codes
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Renew
       run: |
         echo $(date '+%Y-%m-%d %H:%M:%S') > last_renew_time.txt
