@@ -76,8 +76,8 @@
 - url: https://www.phoronix.com/rss.php
   name: Phoronix
   tags: [news]
-- url: https://forum.manjaro.org/c/announcements/testing-updates.rss
-  name: Manjaro Testing Updates
+- url: https://forum.manjaro.org/c/announcements/stable-updates.rss
+  name: Manjaro Stable Updates
   tags: [news]
 - url: https://feeds.feedburner.com/zhihu-daily
   name: 知乎日报
