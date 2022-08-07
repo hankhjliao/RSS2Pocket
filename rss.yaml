@@ -79,6 +79,9 @@
 - url: https://forum.manjaro.org/c/announcements/stable-updates.rss
   name: Manjaro Stable Updates
   tags: [news]
+- url: https://archlinux.org/feeds/news/
+  name: Arch News
+  tags: [news]
 - url: https://feeds.feedburner.com/zhihu-daily
   name: 知乎日报
   tags: [news]
