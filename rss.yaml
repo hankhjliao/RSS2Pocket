@@ -61,9 +61,9 @@
 - url: https://rss.shab.fun/github/issue/headllines/hackernews-daily
   name: Hacker News
   tags: [news]
-- url: https://www.ithome.com.tw/rss
-  name: iThome 新聞
-  tags: [news]
+# - url: https://www.ithome.com.tw/rss
+#   name: iThome 新聞
+#   tags: [news]
 - url: https://global.udn.com/rss/news/1020/8662
   name: udn 轉角國際
   tags: [news]
