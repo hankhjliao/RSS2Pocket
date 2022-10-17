@@ -51,6 +51,9 @@
 - url: https://blog.lilydjwg.me/feed
   name: 依云’s Blog
   tags: [blog]
+- url: http://www.matrix67.com/blog/feed
+  name: Matrix67
+  tags: [blog]
 
 # Game
 - url: https://gamejilu.com/rss/
