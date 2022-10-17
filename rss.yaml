@@ -54,6 +54,9 @@
 - url: http://www.matrix67.com/blog/feed
   name: Matrix67
   tags: [blog]
+- url: https://research.ibm.com/haifa/ponderthis/rss/index.xml
+  name: IBM Ponder This
+  tags: [blog]
 
 # Game
 - url: https://gamejilu.com/rss/
