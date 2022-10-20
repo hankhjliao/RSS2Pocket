@@ -57,6 +57,9 @@
 - url: https://research.ibm.com/haifa/ponderthis/rss/index.xml
   name: IBM Ponder This
   tags: [blog]
+- url: https://catcoding.me/atom.xml
+  name: 程序员的喵
+  tags: [blog]
 
 # Game
 - url: https://gamejilu.com/rss/
