@@ -60,6 +60,12 @@
 - url: https://catcoding.me/atom.xml
   name: 程序员的喵
   tags: [blog]
+- url: https://medium.com/feed/@jiayaushiau
+  name: Medium - Jia-Yau Shiau
+  tags: [blog]
+- url: https://medium.com/feed/@netflixtechblog
+  name: Medium - Netflix Tech Blog
+  tags: [blog]
 
 # Game
 - url: https://gamejilu.com/rss/
