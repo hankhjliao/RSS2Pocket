@@ -39,7 +39,7 @@ jobs:
     #          | jq -r .artifacts\[0\].archive_download_url) -o rss_database.zip; \
     #    done
     - name: Get previous rss_database.csv
-      use: actions/download-artifact@v3
+      uses: actions/download-artifact@v3
       with:
         name: rss_database
     - name: Run code
