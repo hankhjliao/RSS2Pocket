@@ -7,7 +7,7 @@ An awesome tool to save articles from RSS feed to Pocket automatically.
 
 <p align="center">
 <a href="https://github.com/hankliao87/RSS2Pocket/actions?query=workflow%3Arun">
-<img src="https://img.shields.io/github/workflow/status/hankliao87/RSS2Pocket/run.svg?style=flat-square&label=run" alt=""></a>
+<img src="https://img.shields.io/github/actions/workflow/status/hankliao87/RSS2Pocket/run.yml?style=flat-square&label=run" alt=""></a>
 <a href="https://github.com/hankliao87/RSS2Pocket/graphs/contributors">
 <img src="https://img.shields.io/github/contributors/hankliao87/RSS2Pocket.svg?style=flat-square" alt=""></a>
 <a href="https://github.com/hankliao87/RSS2Pocket/network/members">
