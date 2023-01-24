@@ -79,6 +79,9 @@
 - url: https://rss.shab.fun/github/issue/headllines/hackernews-daily
   name: Hacker News
   tags: [news]
+- url: https://rss.shab.fun/github/issue/headllines/github-daily
+  name: GitHub Trending
+  tags: [news]
 # - url: https://www.ithome.com.tw/rss
 #   name: iThome 新聞
 #   tags: [news]
