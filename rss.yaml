@@ -66,6 +66,9 @@
 - url: https://medium.com/feed/@netflixtechblog
   name: Medium - Netflix Tech Blog
   tags: [blog]
+- url: https://www.robalni.org/posts/posts.rss
+  name: robalni.org
+  tags: [blog]
 
 # Game
 - url: https://gamejilu.com/rss/
