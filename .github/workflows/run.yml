@@ -1,6 +1,9 @@
-name: Hourly Run CI
+name: Run CI
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     - cron: '0 * * * *'
 
@@ -32,6 +35,7 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         skip_unpack: true
+        if_no_artifact_found: ignore
     - name: Run code
       env:
         CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
