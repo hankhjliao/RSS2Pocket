@@ -82,9 +82,9 @@
 - url: https://rss.shab.fun/github/issue/headllines/hackernews-daily
   name: Hacker News
   tags: [news]
-- url: https://rss.shab.fun/github/issue/headllines/github-daily
-  name: GitHub Trending
-  tags: [news]
+# - url: https://rss.shab.fun/github/issue/headllines/github-daily
+#   name: GitHub Trending
+#   tags: [news]
 # - url: https://www.ithome.com.tw/rss
 #   name: iThome 新聞
 #   tags: [news]
@@ -97,16 +97,16 @@
 # - url: https://www.twreporter.org/a/rss2.xml
 #   name: 報導者 The Reporter
 #   tags: [news]
-- url: https://www.phoronix.com/rss.php
-  name: Phoronix
-  tags: [news]
+# - url: https://www.phoronix.com/rss.php
+#   name: Phoronix
+#   tags: [news]
 # - url: https://forum.manjaro.org/c/announcements/stable-updates.rss
 #   name: Manjaro Stable Updates
 #   tags: [news]
 - url: https://archlinux.org/feeds/news/
   name: Arch News
   tags: [news]
-- url: https://feeds.feedburner.com/zhihu-daily
+- url: https://feedx.net/rss/zhihudaily.xml
   name: 知乎日报
   tags: [news]
 - url: https://thisweek.gnome.org/index.xml
