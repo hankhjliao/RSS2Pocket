@@ -18,9 +18,9 @@
 # - url: apple
 
 # Blog
-- url: https://feeds.feedburner.com/playpc
-  name: 電腦玩物
-  tags: [blog]
+# - url: https://feeds.feedburner.com/playpc
+#   name: 電腦玩物
+#   tags: [blog]
 - url: https://feeds.feedburner.com/ruanyifeng
   name: 阮一峰的网络日志
   tags: [blog]
@@ -45,6 +45,7 @@
   tags: [blog]
 # - url: https://kill-the-newsletter.com/feeds/yzvb49b43esijjhr.xml
 #   name: www.workspaces.xyz
+#   tags: [blog]
 - url: https://sspai.com/feed
   name: 少数派
   tags: [blog]
@@ -122,6 +123,7 @@
   tags: [software]
 # - url: https://openingsource.org/feed/
 #   name: 开源工场
+#   tags: [software]
 # - url: https://kill-the-newsletter.com/feeds/bogl2fboluknjp7z.xml
 #   name: Probably Nothing
 #   tags: [software]
