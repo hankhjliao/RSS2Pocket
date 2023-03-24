@@ -107,9 +107,9 @@
 - url: https://archlinux.org/feeds/news/
   name: Arch News
   tags: [news]
-# - url: https://feedx.net/rss/zhihudaily.xml
-#   name: 知乎日报
-#   tags: [news]
+- url: https://feedx.net/rss/zhihudaily.xml
+  name: 知乎日报
+  tags: [news]
 - url: https://thisweek.gnome.org/index.xml
   name: This Week in Gnome
   tags: [news]
