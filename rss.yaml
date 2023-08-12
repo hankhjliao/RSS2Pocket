@@ -70,6 +70,9 @@
 - url: https://www.robalni.org/posts/posts.rss
   name: robalni.org
   tags: [blog]
+- url: https://diygod.cc/feed
+  name: DIYgod
+  tags: [blog]
 
 # Game
 - url: https://gamejilu.com/rss/
