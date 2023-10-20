@@ -110,7 +110,7 @@
 - url: https://archlinux.org/feeds/news/
   name: Arch News
   tags: [news]
-- url: https://rsshub.homelab.host/zhihu/daily
+- url: https://rss.shab.fun/zhihu/daily
   name: 知乎日报
   tags: [news]
 # - url: https://thisweek.gnome.org/index.xml
