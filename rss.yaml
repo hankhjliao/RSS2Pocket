@@ -70,7 +70,7 @@
 - url: https://diygod.cc/feed
   name: DIYgod
   tags: [blog]
-- url: https://ivonblog.com/rss.xml
+- url: https://ivonblog.com/index.xml
   name: Ivon
   tags: [blog]
 
