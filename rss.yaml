@@ -21,7 +21,7 @@
 # - url: https://feeds.feedburner.com/playpc
 #   name: 電腦玩物
 #   tags: [blog]
-- url: https://feeds.feedburner.com/ruanyifeng
+- url: https://www.ruanyifeng.com/blog/atom.xml
   name: 阮一峰的网络日志
   tags: [blog]
 - url: https://feeds.feedburner.com/blogspot/gJZg
