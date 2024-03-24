@@ -113,9 +113,9 @@
 - url: https://rss.shab.fun/zhihu/daily
   name: 知乎日报
   tags: [news]
-# - url: https://thisweek.gnome.org/index.xml
-#   name: This Week in Gnome
-#   tags: [news]
+- url: https://thisweek.gnome.org/index.xml
+  name: This Week in Gnome
+  tags: [news]
 
 # Software
 - url: https://feeds.feedburner.com/freegroup
