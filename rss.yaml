@@ -1,9 +1,9 @@
 # Attributes:
 #   Required:
-#     url: feed url
+#     url: feed URL
 #   Optional:
-#     name: feed name (not used in program)
-#     tags: tags applied in Pocket (need to be list)
+#     name: feed name (not used in the program)
+#     tags: tags applied in Pocket (need to be a list)
 #     filter: only add the article title pass the filter (not implement)
 #
 # Example:
@@ -12,7 +12,7 @@
 #   tags: [tag1, tag2]
 #   filter: "Test"
 
-# Test for wrong url
+# Test for the wrong URL
 # - url: https://example.com
 # - url: https://a.c
 # - url: apple
@@ -61,9 +61,9 @@
 - url: https://medium.com/feed/@jiayaushiau
   name: Medium - Jia-Yau Shiau
   tags: [blog]
-- url: https://medium.com/feed/@netflixtechblog
-  name: Medium - Netflix Tech Blog
-  tags: [blog]
+# - url: https://medium.com/feed/@netflixtechblog
+#   name: Medium - Netflix Tech Blog
+#   tags: [blog]
 - url: https://www.robalni.org/posts/posts.rss
   name: robalni.org
   tags: [blog]
