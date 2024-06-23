@@ -32,6 +32,7 @@
   tags: [blog]
 # - url: https://kexue.fm/feed
 #   name: 科学空间
+#   tags: [blog]
 - url: https://lilianweng.github.io/index.xml
   name: Lil’Log
   tags: [blog]
@@ -40,8 +41,6 @@
   tags: [blog]
 - url: https://cjting.me/index.xml
   name: CJ Ting’s Blog
-  tags: [blog]
-- url: https://rsshub.app/leemeng
   tags: [blog]
 - url: https://sspai.com/feed
   name: 少数派
@@ -83,12 +82,9 @@
   tags: [game]
 
 # News
-- url: https://rss.shab.fun/github/issue/headllines/hackernews-daily
+- url: https://rsshub.rssforever.com/github/issue/headllines/hackernews-daily
   name: Hacker News
   tags: [news]
-# - url: https://rss.shab.fun/github/issue/headllines/github-daily
-#   name: GitHub Trending
-#   tags: [news]
 # - url: https://www.ithome.com.tw/rss
 #   name: iThome 新聞
 #   tags: [news]
@@ -104,13 +100,10 @@
 # - url: https://www.phoronix.com/rss.php
 #   name: Phoronix
 #   tags: [news]
-# - url: https://forum.manjaro.org/c/announcements/stable-updates.rss
-#   name: Manjaro Stable Updates
-#   tags: [news]
 - url: https://archlinux.org/feeds/news/
   name: Arch News
   tags: [news]
-- url: https://rss.shab.fun/zhihu/daily
+- url: https://hub.slarker.me/zhihu/daily
   name: 知乎日报
   tags: [news]
 - url: https://thisweek.gnome.org/index.xml
@@ -124,12 +117,6 @@
 - url: https://feeds.appinn.com/appinns/
   name: 小众软件
   tags: [software]
-# - url: https://openingsource.org/feed/
-#   name: 开源工场
-#   tags: [software]
-# - url: https://kill-the-newsletter.com/feeds/bogl2fboluknjp7z.xml
-#   name: Probably Nothing
-#   tags: [software]
 
 # Story
 # - url: https://rsshub.feeded.xyz/wxkol/show/3239197880
