@@ -30,6 +30,9 @@
 - url: https://feeds.feedburner.com/GDBcode
   name: Google Developers Blog
   tags: [blog]
+- url: https://feeds.feedburner.com/blogspot/RLXA
+  name: Google Testing Blog
+  tags: [blog]
 - url: https://distill.pub/rss.xml
   name: Distill
   tags: [blog]
