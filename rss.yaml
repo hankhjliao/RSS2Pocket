@@ -21,9 +21,9 @@
 # - url: https://feeds.feedburner.com/playpc
 #   name: 電腦玩物
 #   tags: [blog]
-# - url: https://www.ruanyifeng.com/blog/atom.xml
-#   name: 阮一峰的网络日志
-#   tags: [blog]
+- url: https://feeds.feedburner.com/ruanyifeng
+  name: 阮一峰的网络日志
+  tags: [blog]
 - url: https://feeds.feedburner.com/blogspot/gJZg
   name: Google AI Blog
   tags: [blog]
@@ -80,6 +80,9 @@
   tags: [blog]
 - url: https://blog.kyomind.tw/atom.xml
   name: Code and Me
+  tags: [blog]
+- url: https://einverne.github.io/feed.xml
+  name: Verne in GitHub
   tags: [blog]
 
 # Game
