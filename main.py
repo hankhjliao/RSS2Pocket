@@ -35,7 +35,8 @@ def add_article(url, tags=[]):
     ret = json.loads(ret.text)
     if ret.get('status', None) is None:
         logging.error("%s: %s", ret['error'], ret['message'])
-        exit()
+        #exit()
+        return false
     return ret['status']
 
 
