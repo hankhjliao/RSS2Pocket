@@ -34,7 +34,7 @@ def add_article(url, tags=[]):
     ret = requests.post(pocket_url, data=data)
     ret = json.loads(ret.text)
     if ret.get('status', None) is None:
-        logging.error("%s: %s", ret['error'], ret['message'])
+        logging.error("%s: %s", ret.get('error', ''), ret.get('message', ''))
         #exit()
         return false
     return ret['status']
