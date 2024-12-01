@@ -84,6 +84,10 @@
 - url: https://einverne.github.io/feed.xml
   name: Verne in GitHub
   tags: [blog]
+- url: https://jvns.ca/atom.xml
+  name: Julia Evans
+  tags: [blog]
+  
 
 # Game
 # - url: https://gamejilu.com/rss/
