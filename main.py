@@ -1,43 +1,45 @@
-from datetime import datetime
-from io import BytesIO
-
 import json
 import logging
 import os
+import zipfile
 
 import feedparser
 import pandas as pd
 import requests
 import yaml
-import zipfile
 
-CONSUMER_KEY = os.environ.get('CONSUMER_KEY', None)
-ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', None)
+from datetime import datetime
+from io import BytesIO
+
+CONSUMER_KEY = os.environ.get("CONSUMER_KEY", None)
+ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN", None)
 NOW = datetime.now()
 REQUEST_TIMEOUT = 10.0
 
-logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s",
-                    level=logging.INFO)
+logging.basicConfig(
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    level=logging.INFO,
+)
 
 
 def add_article(url, tags=[]):
     global CONSUMER_KEY
     global ACCESS_TOKEN
-    pocket_url = 'https://getpocket.com/v3/add'
-    tags.append('feed')
+    pocket_url = "https://getpocket.com/v3/add"
+    tags.append("feed")
     data = {
-        'consumer_key': CONSUMER_KEY,
-        'access_token': ACCESS_TOKEN,
-        'url': url,
-        'tags': ','.join(tags),
+        "consumer_key": CONSUMER_KEY,
+        "access_token": ACCESS_TOKEN,
+        "url": url,
+        "tags": ",".join(tags),
     }
     ret = requests.post(pocket_url, data=data)
     ret = json.loads(ret.text)
-    if ret.get('status', None) is None:
-        logging.error("%s: %s", ret.get('error', ''), ret.get('message', ''))
-        #exit()
+    if ret.get("status", None) is None:
+        logging.error("%s: %s", ret.get("error", ""), ret.get("message", ""))
+        # exit()
         return False
-    return ret['status']
+    return ret["status"]
 
 
 def get_last_time_rss_data(rss_url):
@@ -49,8 +51,8 @@ def get_last_time_rss_data(rss_url):
     return idx, link_latest, link_second_latest
 
 
-if os.path.exists('rss.yaml'):
-    with open("rss.yaml", 'r') as stream:
+if os.path.exists("rss.yaml"):
+    with open("rss.yaml", "r") as stream:
         try:
             rss_configs = yaml.safe_load(stream)
         except Exception as e:
@@ -60,22 +62,25 @@ else:
     logging.error("rss.yaml not exists.")
     exit()
 
-if os.path.exists('rss_database.zip'):
-    rss_database = pd.read_csv('rss_database.zip')
+if os.path.exists("rss_database.zip"):
+    rss_database = pd.read_csv("rss_database.zip")
 else:
-    rss_database = pd.DataFrame(columns=["feed_url",
-                                         "saved_item_link_latest",
-                                         "saved_item_link_second_latest",
-                                         "updated_time"])
+    rss_database = pd.DataFrame(
+        columns=[
+            "feed_url",
+            "saved_item_link_latest",
+            "saved_item_link_second_latest",
+            "updated_time",
+        ]
+    )
 
 
 # Iter all the feed configs
 for rss_config in rss_configs:
-
     # Get the feed config
-    rss_url = rss_config['url']
-    rss_tags = rss_config.get('tags', ['feed'])
-    rss_filter = rss_config.get('filter', '')
+    rss_url = rss_config["url"]
+    rss_tags = rss_config.get("tags", ["feed"])
+    rss_filter = rss_config.get("filter", "")
 
     # Get the feed content
     logging.info(f"Checking {rss_url}")
@@ -100,7 +105,7 @@ for rss_config in rss_configs:
             "feed_url": rss_url,
             "saved_item_link_latest": None,
             "saved_item_link_second_latest": None,
-            "updated_time": None
+            "updated_time": None,
         }
         rss_database.index = rss_database.index + 1
         flag_first_run = True
@@ -110,26 +115,21 @@ for rss_config in rss_configs:
 
     # Sort the article according to the published time
     try:
-        entries = Feed.get('entries', [])
-        entries = sorted(entries, key=lambda e: e.published_parsed,
-                         reverse=True)
+        entries = Feed.get("entries", [])
+        entries = sorted(entries, key=lambda e: e.published_parsed, reverse=True)
     except Exception as e:
-        entries = Feed.get('entries', [])
+        entries = Feed.get("entries", [])
         logging.error(f"Feed doesn't support published_parsed attribute: {rss_url}")
 
     # Iter the article in the feed
     for entry in entries:
-
         # Break if added
         if (entry.link == link_latest) or (entry.link == link_second_latest):
             break
 
         # Print article information
-        entry_published_time = entry.get('published', None)
-        logging.info(f"Article Info:\n"
-                     f"\tTitle: {entry.title}\n"
-                     f"\tPublished time: {entry_published_time}\n"
-                     f"\tLink: {entry.link}")
+        entry_published_time = entry.get("published", None)
+        logging.info(f"Article Info:\n\tTitle: {entry.title}\n\tPublished time: {entry_published_time}\n\tLink: {entry.link}")
 
         # Add the article
         if add_article(entry.link, rss_tags):
@@ -137,10 +137,8 @@ for rss_config in rss_configs:
 
             # Update the rss database
             if rss_database.loc[idx, "updated_time"] != NOW:
-                rss_database.loc[idx,
-                                 "saved_item_link_second_latest"] = link_latest
-                rss_database.loc[idx,
-                                 "saved_item_link_latest"] = entry.link
+                rss_database.loc[idx, "saved_item_link_second_latest"] = link_latest
+                rss_database.loc[idx, "saved_item_link_latest"] = entry.link
                 rss_database.loc[idx, "updated_time"] = NOW
         else:
             logging.warning(f"Article not added: {entry.link}")
@@ -151,10 +149,10 @@ for rss_config in rss_configs:
 
 
 # Save the rss database
-rss_database.sort_values("feed_url").to_csv('rss_database.csv', index=False)
+rss_database.sort_values("feed_url").to_csv("rss_database.csv", index=False)
 
 # This is for CLI user
 # As for GitHub Action user, the GitHub Action will compress the csv to zip
 # file when running upload-artifact@v2
-with zipfile.ZipFile('rss_database.zip', 'w') as zf:
-    zf.write('rss_database.csv')
+with zipfile.ZipFile("rss_database.zip", "w") as zf:
+    zf.write("rss_database.csv")
