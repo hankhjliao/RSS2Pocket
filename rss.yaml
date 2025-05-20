@@ -104,9 +104,9 @@
 # - url: https://www.ithome.com.tw/rss
 #   name: iThome 新聞
 #   tags: [news]
-- url: https://global.udn.com/rss/news/1020/8662
-  name: udn 轉角國際
-  tags: [news]
+# - url: https://global.udn.com/rss/news/1020/8662
+#   name: udn 轉角國際
+#   tags: [news]
 # - url: https://www.twreporter.org/a/rss2.xml
 #   name: 報導者 The Reporter
 #   tags: [news]
