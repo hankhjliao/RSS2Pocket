@@ -2,7 +2,7 @@ import argparse
 import json
 import logging
 import os
-# import zipfile
+import zipfile
 
 import feedparser
 import pandas as pd
@@ -93,14 +93,13 @@ class RSS:
     def saveRSSDatabase(self):
         # Save the rss database
         archive_name = Path(self.rss_database_path).with_suffix(".csv").name
-        compression_options = dict(method="zip", archive_name=archive_name)
-        self.rss_database.sort_values("feed_url").to_csv(self.rss_database_path, index=False, compression=compression_options)
+        self.rss_database.sort_values("feed_url").to_csv(archive_name, index=False)
 
         # This is for CLI user
         # As for GitHub Action user, the GitHub Action will compress the csv to zip
         # file when running upload-artifact@v2
-        # with zipfile.ZipFile(self.rss_database_path, "w") as zf:
-        #     zf.write("rss_database.csv")
+        with zipfile.ZipFile(self.rss_database_path, "w") as zf:
+            zf.write("rss_database.csv")
 
     def run(self):
         # Iter all the feed configs
