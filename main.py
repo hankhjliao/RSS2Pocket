@@ -92,7 +92,7 @@ class RSS:
 
     def saveRSSDatabase(self):
         # Save the rss database
-        archive_name = Path(self.rss_database_path).with_stem(".csv").name
+        archive_name = Path(self.rss_database_path).with_suffix(".csv").name
         compression_options = dict(method="zip", archive_name=archive_name)
         self.rss_database.sort_values("feed_url").to_csv(self.rss_database_path, index=False, compression=compression_options)
 
