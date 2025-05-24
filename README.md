@@ -22,6 +22,9 @@ An awesome tool to save articles from RSS feed to Pocket automatically.
 
 </p>
 
+**Note: Pocket will no longer be available after July 8, 2025.**  
+https://support.mozilla.org/en-US/kb/future-of-pocket
+
 ## About the Project
 I used to use IFTTT to [save articles from RSS feed to Pocket](https://ifttt.com/applets/gnf8UbSV).  
 But in Sept. 2020, [IFTTT starts the Pro plan which makes the Standard plan can only create 3 applets](https://ifttt.com/plans).  
