@@ -23,12 +23,12 @@ class RSS:
     def __init__(self, rss_config_path="rss.yaml", rss_database_path="rss_database.zip", request_timeout=10.0):
         self.CONSUMER_KEY = os.environ.get("CONSUMER_KEY", None)
         self.ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN", None)
-        self.url = "https://getpocket.com/v3/add"
+        self.URL = "https://getpocket.com/v3/add"
 
-        self.rss_config_path = rss_config_path
-        self.rss_database_path = rss_database_path
         self.NOW = datetime.now()
         self.REQUEST_TIMEOUT = request_timeout
+        self.rss_config_path = rss_config_path
+        self.rss_database_path = rss_database_path
         self.rss_configs = None
         self.rss_database = pd.DataFrame(
             columns=[
@@ -47,7 +47,7 @@ class RSS:
             "url": url,
             "tags": ",".join(tags),
         }
-        ret = requests.post(self.url, data=data)
+        ret = requests.post(self.URL, data=data)
         if ret.text == "":
             logging.error("Pocket return empty string")
             return False
