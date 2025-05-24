@@ -147,7 +147,7 @@ class RSS:
                 entries = sorted(entries, key=lambda e: e.published_parsed, reverse=True)
             except Exception as e:
                 entries = Feed.get("entries", [])
-                logging.error(f"Feed doesn't support published_parsed attribute: {rss_url}")
+                logging.warning(f"Feed doesn't support published_parsed attribute: {rss_url}")
 
             # Iter the article in the feed
             for entry in entries:
