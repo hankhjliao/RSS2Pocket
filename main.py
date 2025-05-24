@@ -20,7 +20,7 @@ logging.basicConfig(
 
 
 class RSS:
-    def __init__(self, rss_config_path="rss.yaml", rss_database_path="rss_database.zip", requests_timeout=10.0):
+    def __init__(self, rss_config_path="rss.yaml", rss_database_path="rss_database.zip", request_timeout=10.0):
         self.CONSUMER_KEY = os.environ.get("CONSUMER_KEY", None)
         self.ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN", None)
         self.url = "https://getpocket.com/v3/add"
@@ -28,7 +28,7 @@ class RSS:
         self.rss_config_path = rss_config_path
         self.rss_database_path = rss_database_path
         self.NOW = datetime.now()
-        self.REQUESTS_TIMEOUT = requests_timeout
+        self.REQUEST_TIMEOUT = request_timeout
         self.rss_configs = None
         self.rss_database = pd.DataFrame(
             columns=[
