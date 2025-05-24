@@ -42,12 +42,12 @@
 - url: https://lilianweng.github.io/index.xml
   name: Lil’Log
   tags: [blog]
-- url: https://rss.shab.fun/blogs/wordpress/haogroot.com/
-  name: haogroot’s Blog
-  tags: [blog]
-- url: https://cjting.me/index.xml
-  name: CJ Ting’s Blog
-  tags: [blog]
+# - url: https://rss.shab.fun/blogs/wordpress/haogroot.com/
+#   name: haogroot’s Blog
+#   tags: [blog]
+# - url: https://cjting.me/index.xml
+#   name: CJ Ting’s Blog
+#   tags: [blog]
 - url: https://sspai.com/feed
   name: 少数派
   tags: [blog]
@@ -63,15 +63,15 @@
 - url: https://catcoding.me/atom.xml
   name: 程序员的喵
   tags: [blog]
-- url: https://medium.com/feed/@jiayaushiau
-  name: Medium - Jia-Yau Shiau
-  tags: [blog]
+# - url: https://medium.com/feed/@jiayaushiau
+#   name: Medium - Jia-Yau Shiau
+#   tags: [blog]
 # - url: https://medium.com/feed/@netflixtechblog
 #   name: Medium - Netflix Tech Blog
 #   tags: [blog]
-- url: https://www.robalni.org/posts/posts.rss
-  name: robalni.org
-  tags: [blog]
+# - url: https://www.robalni.org/posts/posts.rss
+#   name: robalni.org
+#   tags: [blog]
 - url: https://diygod.cc/feed
   name: DIYgod
   tags: [blog]
@@ -81,9 +81,9 @@
 - url: https://blog.kyomind.tw/atom.xml
   name: Code and Me
   tags: [blog]
-- url: https://einverne.github.io/feed.xml
-  name: Verne in GitHub
-  tags: [blog]
+# - url: https://einverne.github.io/feed.xml
+#   name: Verne in GitHub
+#   tags: [blog]
 - url: https://jvns.ca/atom.xml
   name: Julia Evans
   tags: [blog]
